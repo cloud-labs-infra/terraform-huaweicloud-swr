@@ -1,1 +1,1 @@
-# Module name
+# Huawei Cloud Software Repository for Container (SWR)
