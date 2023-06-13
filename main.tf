@@ -28,3 +28,12 @@ resource "huaweicloud_swr_organization_permissions" "main" {
     }
   }
 }
+
+resource "huaweicloud_swr_image_retention_policy" "main" {
+  for_each = var.retention_policy ? var.repositories : {}
+
+  organization = huaweicloud_swr_organization.main.name
+  repository   = each.key
+  type         = var.retention_policy_type
+  number       = var.retention_policy_number
+}
