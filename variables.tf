@@ -39,3 +39,30 @@ variable "permissions" {
   }))
   default = []
 }
+
+variable "retention_policy" {
+  description = "Is retention policy enabled?"
+  type        = bool
+  default     = false
+}
+
+variable "retention_policy_type" {
+  description = "Specifies the retention policy type"
+  type        = string
+  default     = "tag_rule"
+  validation {
+    condition     = contains(["tag_rule", "date_rule"], var.retention_policy_type)
+    error_message = "Value options: date_rule, tag_rule."
+  }
+}
+
+variable "retention_policy_number" {
+  description = <<DES
+  Specifies the number of retention:
+
+  * If type is set to 'date_rule', it represents the number of retention days;
+  * If type is set to 'tag_rule', it represents the retention number.
+  DES
+  type        = number
+  default     = 50
+}
