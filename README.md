@@ -21,6 +21,7 @@ No modules.
 
 | Name | Type |
 |------|------|
+| [huaweicloud_swr_image_retention_policy.main](https://registry.terraform.io/providers/huaweicloud/huaweicloud/latest/docs/resources/swr_image_retention_policy) | resource |
 | [huaweicloud_swr_organization.main](https://registry.terraform.io/providers/huaweicloud/huaweicloud/latest/docs/resources/swr_organization) | resource |
 | [huaweicloud_swr_organization_permissions.main](https://registry.terraform.io/providers/huaweicloud/huaweicloud/latest/docs/resources/swr_organization_permissions) | resource |
 | [huaweicloud_swr_repository.main](https://registry.terraform.io/providers/huaweicloud/huaweicloud/latest/docs/resources/swr_repository) | resource |
@@ -33,6 +34,9 @@ No modules.
 | <a name="input_permissions"></a> [permissions](#input\_permissions) | Specifies the repository name and parameters"<br>  * `user_id` - IAM User ID;<br>  * `user_name` - IAM User name;<br>  * `permission` -the values can be `Manage`, `Write` and `Read`. | <pre>set(object({<br>    user_id    = string<br>    user_name  = optional(string, null)<br>    permission = optional(string, "Read")<br>  }))</pre> | `[]` | no |
 | <a name="input_region"></a> [region](#input\_region) | Specifies the region in which to create the resource, if omitted, the provider-level region will be used | `string` | `null` | no |
 | <a name="input_repositories"></a> [repositories](#input\_repositories) | Specifies the repository name and parameters"<br>  * `description` - specifies the description of the repository;<br>  * `is_public` - specifies whether the repository is public;<br>  * `category` - the value can be app\_server, linux, framework\_app, database, lang, other, windows, arm. | <pre>map(object({<br>    description = optional(string, null)<br>    is_public   = optional(bool, false)<br>    category    = optional(string, "other")<br>  }))</pre> | `{}` | no |
+| <a name="input_retention_policy"></a> [retention\_policy](#input\_retention\_policy) | Is retention policy enabled? | `bool` | `false` | no |
+| <a name="input_retention_policy_number"></a> [retention\_policy\_number](#input\_retention\_policy\_number) | Specifies the number of retention:<br><br>  * If type is set to 'date\_rule', it represents the number of retention days;<br>  * If type is set to 'tag\_rule', it represents the retention number. | `number` | `50` | no |
+| <a name="input_retention_policy_type"></a> [retention\_policy\_type](#input\_retention\_policy\_type) | Specifies the retention policy type | `string` | `"tag_rule"` | no |
 
 ## Outputs
 
