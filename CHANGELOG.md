@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0](https://github.com/cloud-labs-infra/terraform-huaweicloud-swr/compare/v1.1.0...v1.2.0) (2024-04-18)
+
+
+### Features
+
+* Update version of tf and providers ([#7](https://github.com/cloud-labs-infra/terraform-huaweicloud-swr/issues/7)) ([59f8188](https://github.com/cloud-labs-infra/terraform-huaweicloud-swr/commit/59f8188ed48bd67942efde8e1744c27d4d706a59))
+
 ## [1.1.0](https://github.com/cloud-labs-infra/terraform-huaweicloud-swr/compare/v1.0.0...v1.1.0) (2023-06-13)
 
 
